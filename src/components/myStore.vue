@@ -6,18 +6,19 @@
 
     <div class="search-and-results">
       
+      <div class="searcharea">
         <div class="input-container">
           <input
-            class="search"
             type="text"
             placeholder="Search for the movie here!"
           />
         </div>
-      
+      </div>
       <div class="results">
-        <div v-for="gettersmovie in gettersmovies" :key="gettersmovie.id">
-          {{ gettersmovie.id }} {{ gettersmovie.title }}
-          {{ gettersmovie.address }}
+          
+        <div class="result-item" v-for="gettersmovie in gettersmovies" :key="gettersmovie.id">
+          <div class="result-title"><b>Title:</b><br>{{ gettersmovie.name }}</div> <div class="result-link"><b>Link:</b><br>https://www.justwatch.com/{{ gettersmovie.website }}</div>
+          <div class="result-type"><b>Type:</b><br>{{ gettersmovie.company.name }}</div>
         </div>
       </div>
     </div>
@@ -40,5 +41,6 @@ export default {
   mounted() {
     this.$store.dispatch("getMovies");
   },
+
 };
 </script>

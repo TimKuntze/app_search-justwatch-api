@@ -19,7 +19,7 @@ const getters = {
 //to handle actions
 const actions = {
     getMovies({ commit }:{ commit: any; }) {
-        axios.get('https://jsonplaceholder.typicode.com/todos')
+        axios.get('https://jsonplaceholder.typicode.com/users')
             .then(response => {
                 commit('SET_MOVIES', response.data)
            })

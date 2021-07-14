@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-html {
-    overflow-y: scroll;
-}
-
 body {
     display: grid;
     grid-template-rows: 150px 1fr;
