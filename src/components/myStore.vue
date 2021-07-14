@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
     <header>
+        
       <h1>{{ msg }}</h1>
+      <img src="./../assets/film-reel-128_white.png">
     </header>
 
     <div class="search-and-results">

@@ -54,10 +54,17 @@ h1 {
 }
 
 header {
-  display: grid;
+  display: flex;
   color: white;
   background: #3f314b;
   padding: 32px;
+  align-items: center;
+  justify-content: center; 
+}
+
+header img {
+  width: 36px; 
+  margin-left: 32px; 
 }
 
 .search-and-results {
@@ -106,8 +113,9 @@ header {
 .result-item {
   margin-bottom: 32px; 
   padding: 8px; 
-  border: 1px solid black; 
+  border: 2px solid #3f314b; 
   border-radius: 5px;
+  background-color: #e2e2e2;
 }
 
 </style>
