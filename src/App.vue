@@ -93,6 +93,11 @@ header {
   width: 100%; 
 }
 
+.input-container img {
+  height: 18px; 
+  margin-left: 12px; 
+}
+
 .results {
   padding: 64px; 
   text-align: left;

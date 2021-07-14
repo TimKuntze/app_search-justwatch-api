@@ -8,6 +8,7 @@
       
       <div class="searcharea">
         <div class="input-container">
+            <img src="./../assets/search-2-128.png">
           <input
             type="text"
             placeholder="Search for the movie here!"
