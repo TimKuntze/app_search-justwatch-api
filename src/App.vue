@@ -1,29 +1,101 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="app" id="app">
+    <my-store></my-store>
   </div>
+
+  
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import MyStore from './components/myStore.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    MyStore,
   },
 })
 export default class App extends Vue {}
 </script>
 
 <style>
+
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #a6b0ba;
+    opacity: 1;
+    /* Firefox */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: 150px 1fr;
+    background-color: #f5f5f5;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 10px;
+}
+
+h1 {
+    place-self: center;
+    font-size: 42px;
+}
+
+header {
+    display: grid;
+    color: white;
+    background: #3f314b;
+    padding: 32px; 
+}
+
+.search-and-results {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+    border-radius: 5px;
+    background: #677482;
+    padding: 10px;
+    margin-top: 64px; 
+    display: flex;
+    align-items: center;
+}
+
+.input-container input {
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 6px 15px;
+    font-size: 18px;
+    height: 100%; 
+}
+
+.search {
+  min-width: 300px; 
+}
+
+.results {
+  margin-top: 64px; 
+}
+
 </style>
