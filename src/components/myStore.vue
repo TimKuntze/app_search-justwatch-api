@@ -20,13 +20,13 @@
         <div
           class="result-item"
           v-for="gettersmovie in gettersmovies"
-          :key="gettersmovie.items.id"
+          :key="gettersmovie.id"
         >
           <div class="result-title">
             <b>Title:</b><br />{{ gettersmovie.title }}
           </div>
           <div class="result-link">
-            <b>Link:</b><br />https://www.justwatch.com/{{
+            <b>Link:</b><br />https://www.justwatch.com{{
               gettersmovie.full_path
             }}
           </div>
@@ -52,7 +52,7 @@ export default {
   },
   computed: {
     gettersmovies() {
-      return this.$store.getters.allMovies;
+      return this.$store.getters.allMovies.items;
     },
   },
   mounted() {
