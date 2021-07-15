@@ -26,12 +26,10 @@
             <b>Title:</b><br />{{ gettersmovie.title }}
           </div>
           <div class="result-link">
-            <b>Link:</b><br />https://www.justwatch.com{{
-              gettersmovie.full_path
-            }}
+            <b>Link:</b><br /><a v-bind:href="'https://www.justwatch.com'+ gettersmovie.full_path" target="_blank">Go to Movie</a>
           </div>
           <div class="result-type">
-            <b>Type:</b><br />{{ gettersmovie.object_type }}
+            <b>Release year:</b><br />{{ gettersmovie.original_release_year }}
           </div>
         </div>
       </div>
