@@ -26,7 +26,11 @@
             <b>Title:</b><br />{{ gettersmovie.title }}
           </div>
           <div class="result-link">
-            <b>Link:</b><br /><a v-bind:href="'https://www.justwatch.com'+ gettersmovie.full_path" target="_blank">Go to Movie</a>
+            <b>Link:</b><br /><a
+              v-bind:href="'https://www.justwatch.com' + gettersmovie.full_path"
+              target="_blank"
+              >Go to Movie</a
+            >
           </div>
           <div class="result-type">
             <b>Release year:</b><br />{{ gettersmovie.original_release_year }}
@@ -39,9 +43,6 @@
 
 <script>
 export default {
-
-
-
   name: "myStore",
   data() {
     return {
@@ -52,6 +53,16 @@ export default {
     gettersmovies() {
       return this.$store.getters.allMovies.items;
     },
+    // Process search input (TO BE CHECKED)
+    searchResult() {
+      let searchedMovies = this.$store.getters.allMovies.items;
+      if (this.search != "" && this.search) {
+        searchedMovies = searchedMovies.filter((item) => {
+          return item.title.toUpperCase().includes(this.search.toUpperCase());
+        });
+      }
+      return searchedMovies;
+    },
   },
   mounted() {
     this.$store.dispatch("getMovies");
@@ -59,7 +70,6 @@ export default {
   methods: {
     searchMovie(e) {
       this.$store.commit("searchMovie", e.target.value);
-      
     },
   },
 };
