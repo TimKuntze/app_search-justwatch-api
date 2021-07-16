@@ -16,25 +16,42 @@
           />
         </div>
       </div>
-      <div class="results">
-        <div
+      <div class="results" v-if="gettersfilteredmovies.length">
+        <div 
           class="result-item"
-          v-for="gettersmovie in gettersfilteredmovies"
-          :key="gettersmovie.id"
+          v-for="gettersmoviesearch in gettersfilteredmovies"
+          :key="gettersmoviesearch.id"
         >
           <div class="result-title">
-            <b>Title:</b><br />{{ gettersmovie.title }}
+            <b>Title:</b><br />{{ gettersmoviesearch.title }}
           </div>
           <div class="result-link">
             <b>Link:</b><br /><a
-              v-bind:href="'https://www.justwatch.com' + gettersmovie.full_path"
+              v-bind:href="'https://www.justwatch.com' + gettersmoviesearch.full_path"
               target="_blank"
-              >Go to Movie</a
+              >Go to JustWatch</a
             >
           </div>
-          <div class="result-type">
-            <b>Cinema release date:</b><br />{{ gettersmovie.cinema_release_date }}
+
+        </div>
+      </div>
+      <div class="results" v-else>
+        <div 
+          class="result-item"
+          v-for="gettersmovielist in gettersmovies"
+          :key="gettersmovielist.id"
+        >
+          <div class="result-title">
+            <b>Title:</b><br />{{ gettersmovielist.title }}
           </div>
+          <div class="result-link">
+            <b>Link:</b><br /><a
+              v-bind:href="'https://www.justwatch.com' + gettersmovielist.full_path"
+              target="_blank"
+              >Go to JustWatch</a
+            >
+          </div>
+
         </div>
       </div>
     </div>
