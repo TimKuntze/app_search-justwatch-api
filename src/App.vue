@@ -55,6 +55,7 @@ h1 {
 
 header {
   display: flex;
+  flex-direction: column;
   color: white;
   background: #3f314b;
   padding: 32px;
@@ -64,7 +65,7 @@ header {
 
 header img {
   width: 36px; 
-  margin-left: 32px; 
+  margin-top: 24px; 
 }
 
 .search-and-results {
